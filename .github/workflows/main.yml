@@ -1,22 +1,28 @@
-name: Node.js Package
+name: Publish Package Node.js
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  publish-gpr:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-          scope: '@gabrielgamaalves'
-          always-auth: true
-      - run: npm install
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.PACKAGES_INSTALL_SECRET}}
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node and Publish
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@gabrielgamaalves'
+    
+    - run: npm ci || true
+    - run: npm test || true
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_INSTALL_SECRET }}

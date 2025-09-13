@@ -1,12 +1,13 @@
 {
-  "name": "nocors",
+  "name": "@gabrielgamaalves/nocors",
   "version": "1.0.0",
-  "description": "",
+  "description": "Nocors is a simple and efficient solution to bypass CORS (Cross-Origin Resource Sharing) issues in HTTP requests made with Node.js. With this library, you can make requests to any API without worrying about CORS restrictions.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@gabrielgamaalves"
+    "registry": "https://npm.pkg.github.com/@gabrielgamaalves",
+    "access": "restricted"
   },
   "files": [
     "dist",
@@ -32,7 +33,7 @@
     "type": "git",
     "url": "https://github.com/gabrielgamaalves/nocors.git"
   },
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "@types/node": "^24.3.3",
     "ts-node": "^10.9.2",
