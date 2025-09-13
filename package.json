@@ -1,0 +1,39 @@
+{
+  "name": "nocors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev:run": "ts-node ./src/index.ts"
+  },
+  "keywords": [
+    "no-cors",
+    "cors",
+    "proxy",
+    "fetch-proxy"
+  ],
+  "author": "Gabriel Gama <gabrielgamaalves1@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielgamaalves/nocors.git"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
