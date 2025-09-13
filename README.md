@@ -6,7 +6,7 @@
 
 ## 🌐 Language Options
 - [English (en-US)](README.md)
-- [Português (pt-BR)](README.pt-BR.md)
+- [Português (pt-BR)](docs/README.pt-BR.md)
 
 ## ✨ Features
 
