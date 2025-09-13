@@ -1,6 +1,6 @@
 {
   "name": "@gabrielgamaalves/nocors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nocors is a simple and efficient solution to bypass CORS (Cross-Origin Resource Sharing) issues in HTTP requests made with Node.js. With this library, you can make requests to any API without worrying about CORS restrictions.",
   "main": "dist/index.js",
   "module": "dist/index.js",
