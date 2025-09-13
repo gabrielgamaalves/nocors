@@ -1,4 +1,4 @@
-const USER_AGENTS: any = require("../../data/user-agents.json")
+import USER_AGENTS from "../../../data/user-agents.json"
 
 export function random(length: number, timestamp: number = Date.now()) {
   const seed = timestamp * length;
