@@ -5,8 +5,8 @@
 O **Nocors** é uma solução simples e eficiente para contornar problemas de CORS (Cross-Origin Resource Sharing) em requisições HTTP feitas com Node.js. Com esta biblioteca, você pode fazer requisições para qualquer API sem se preocupar com restrições de CORS.
 
 ## 🌐 Opções de língua
-- [English (en-US)](README.md)
-- [Português (pt-BR)](docs/README.pt-BR.md)
+- [English (en-US)](../README.md)
+- [Português (pt-BR)](README.pt-BR.md)
 
 ## ✨ Características
 
