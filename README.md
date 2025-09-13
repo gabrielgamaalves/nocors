@@ -2,37 +2,41 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-O **Nocors** é uma solução simples e eficiente para contornar problemas de CORS (Cross-Origin Resource Sharing) em requisições HTTP feitas com Node.js. Com esta biblioteca, você pode fazer requisições para qualquer API sem se preocupar com restrições de CORS.
+**Nocors** is a simple and efficient solution to bypass CORS (Cross-Origin Resource Sharing) issues in HTTP requests made with Node.js. With this library, you can make requests to any API without worrying about CORS restrictions.
 
-## ✨ Características
+## 🌐 Language Options
+- [English (en-US)](README.md)
+- [Português (pt-BR)](README.pt-BR.md)
 
-- ✅ **Uso simples** para contornar problemas de CORS
-- 🔄 **User Agents automáticos** - Rotação automática de user agents para evitar bloqueios
-- 📦 **Zero dependências** - Não requer pacotes externos
-- ⚡ **Leve e rápido** - Implementação minimalista e eficiente
-- 🔧 **Fácil integração** - Compatível com fetch nativo do Node.js
+## ✨ Features
 
-## 📦 Instalação
+- ✅ **Simple usage** to bypass CORS problems
+- 🔄 **Automatic User Agents** - Automatic rotation of user agents to avoid blocks
+- 📦 **Zero dependencies** - No external packages required
+- ⚡ **Lightweight and fast** - Minimalist and efficient implementation
+- 🔧 **Easy integration** - Compatible with Node.js native fetch
 
-⚠️ **Atenção**: Ainda não disponível no NPM. Para usar, clone o repositório:
+## 📦 Installation
+
+⚠️ **Note**: Not yet available on NPM. To use, clone the repository:
 
 ```bash
 git clone https://github.com/gabrielgamaalves/nocors.git
 cd nocors
 ```
 
-## 🚀 Início Rápido
+## 🚀 Quick Start
 
-### Exemplo Básico
+### Basic Example
 
 ```javascript
 const nocors = require('./nocors');
 
-const response = await nocors('https://api.exemplo.com/dados');
+const response = await nocors('https://api.example.com/data');
 const data = await response.json();
 ```
 
-### Exemplo com Opções Personalizadas
+### Example with Custom Options
 
 ```javascript
 const nocors = require('./nocors');
@@ -41,48 +45,48 @@ const options = {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer seu-token-aqui'
+      'Authorization': 'Bearer your-token-here'
   },
-  body: JSON.stringify({ chave: 'valor' }),
-  device: ['desktop', 'desktop', 'mobile'] /* 2/3 de chance de ser um user-agent desktop */
+  body: JSON.stringify({ key: 'value' }),
+  device: ['desktop', 'desktop', 'mobile'] /* 2/3 chance of being a desktop user-agent */
 };
 
-const response = await nocors.fetch('https://api.exemplo.com/endpoint', options);
-const resultado = await response.text();
+const response = await nocors.fetch('https://api.example.com/endpoint', options);
+const result = await response.text();
 ```
 
 ## 🎯 Features
 
-### Timeout Configurável
-Suporte para timeout personalizado em requisições.
+### Configurable Timeout
+Support for custom timeout in requests.
 
-### Retry Automático
-Tentativas automáticas de reconexão em caso de falhas.
+### Automatic Retry
+Automatic reconnection attempts in case of failures.
 
 ## 📚 API Reference
 
 ### `nocors(url, options)`
 
-Faz uma requisição HTTP contornando restrições de CORS.
+Makes an HTTP request bypassing CORS restrictions.
 
-**Parâmetros:**
-- `url` (string): URL da requisição
-- `options` (object, opcional): Opções estendidas da requisição que incluem:
-  - Propriedades padrão do `RequestInit`
-  - `timeout` (number): Timeout em milissegundos
-  - `retries` (number): Número de tentativas em caso de falha
-  - `device` (Array<"mobile" | "desktop">): Array de dispositivos para seleção de user agent
+**Parameters:**
+- `url` (string): Request URL
+- `options` (object, optional): Extended request options that include:
+  - Standard `RequestInit` properties
+  - `timeout` (number): Timeout in milliseconds
+  - `retries` (number): Number of retry attempts in case of failure
+  - `device` (Array<"mobile" | "desktop">): Array of devices for user agent selection
 
-**Retorna:** Promise contendo a resposta da requisição
+**Returns:** Promise containing the request response
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## ⚠️ Disclaimer
 
-Este projeto é destinado para fins educacionais e de desenvolvimento. Use com responsabilidade e respeite os termos de serviço dos sites que você acessa.
+This project is intended for educational and development purposes. Use responsibly and respect the terms of service of the websites you access.
 
 ---
 
-**Desenvolvido por [Gabriel Gama Alves](https://github.com/gabrielgamaalves)**
+**Developed by [Gabriel Gama Alves](https://github.com/gabrielgamaalves)**
