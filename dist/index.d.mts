@@ -20,5 +20,5 @@ interface NocorsRequestInit extends RequestInit {
  * });
  */
 declare function nocors(uri: URL | string, init?: NocorsRequestInit): Promise<Response>;
-export default nocors;
-//# sourceMappingURL=index.d.ts.map
+
+export { nocors as default };

@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "Advanced HTTP client for Node.js with header control, retries, and client identity profiles.",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
@@ -42,8 +43,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^24.3.3",
-    "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   }
 }
