@@ -8,3 +8,4 @@
  */
 declare function URI(base: string | URL, pathname: string, query?: Record<string, string>): URL;
 export default URI;
+//# sourceMappingURL=uri.d.ts.map

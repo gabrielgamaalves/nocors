@@ -15,11 +15,14 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsc && npx ts-node ./.dev/index.ts plugin all",
     "start": "node dist/index.js",
+    
+    "prepublishOnly": "npm run build",
+    
+    "dev": "tsc --watch",
     "dev:run": "ts-node ./src/index.ts",
-    "prepublishOnly": "npm run build"
+    "dev:-tsc": "tsc --outDir ./.dev --rootDir ./.dev ./.dev/**/*.ts"
   },
   "keywords": [
     "no-cors",

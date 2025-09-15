@@ -12,26 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.nocors = nocors;
 const UsersAgent_1 = __importDefault(require("./core/UsersAgent"));
-/**
- * Realiza uma requisição HTTP com sistema avançado para burlar a segurança CORS
- * @param uri - URL ou objeto URL para a requisição
- * @param init - Opções de configuração do requisição. Com opção de user-agent(mobile ou desktop) => device
- * @description Sistema de segurança avançado para validação CORS, eficaz, mas com desempenho reduzido. Voltado para requisições críticas
- * @returns Promise resolvida com a resposta da requisição
- * @throws {TypeError} Se o URI não for válido
- * @throws {Error} Se a validação CORS falhar
- * @example
- * // Example:
- * await nocors('https://api.example.com/data', {
- *   method: 'GET',
- *   device: ['desktop'],
- *   headers: {
- *      authorization: Bearer ...
- *   }
- * });
- */
+
 function nocors(uri_1) {
     return __awaiter(this, arguments, void 0, function* (uri, init = {}) {
         const url = new URL(uri);

@@ -4,3 +4,4 @@ export interface IUserAgentOptions {
 }
 declare function UserAgent(options: IUserAgentOptions): string;
 export default UserAgent;
+//# sourceMappingURL=UsersAgent.d.ts.map

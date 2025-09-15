@@ -22,7 +22,7 @@ interface NocorsRequestInit extends RequestInit {
  *   }
  * });
  */
-export async function nocors(uri: URL | string, init: NocorsRequestInit = {}): Promise<Response> {
+async function nocors(uri: URL | string, init: NocorsRequestInit = {}): Promise<Response> {
   const url = new URL(uri);
 
   const headers = new Headers({
