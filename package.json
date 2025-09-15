@@ -1,12 +1,12 @@
 {
   "name": "@gabrielgamaalves/nocors",
-  "version": "1.0.2",
-  "description": "Nocors is a simple and efficient solution to bypass CORS (Cross-Origin Resource Sharing) issues in HTTP requests made with Node.js. With this library, you can make requests to any API without worrying about CORS restrictions.",
+  "version": "1.1.0",
+  "description": "Advanced HTTP client for Node.js with header control, retries, and client identity profiles.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@gabrielgamaalves",
-    "access": "restricted"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "files": [
     "dist",
@@ -16,15 +16,22 @@
   ],
   "scripts": {
     "build": "tsc && npx ts-node ./.dev/index.ts plugin all",
-    "start": "node dist/index.js",   
+    "start": "node dist/index.js",
     "dev": "tsc --watch",
-    "dev:run": "ts-node ./src/index.ts"
+    "dev:run": "ts-node ./src/index.ts",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "no-cors",
+    "nocors",
     "cors",
+    "http-client",
+    "fetch",
     "proxy",
-    "fetch-proxy"
+    "nodejs",
+    "advanced-http",
+    "client-identity",
+    "headers",
+    "api-integration"
   ],
   "author": "Gabriel Gama <gabrielgamaalves1@gmail.com>",
   "license": "MIT",
