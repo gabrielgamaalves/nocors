@@ -1,6 +1,6 @@
 {
   "name": "@gabrielgamaalves/nocors",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Advanced HTTP client for Node.js with header control, retries, and client identity profiles.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
