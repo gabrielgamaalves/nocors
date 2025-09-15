@@ -36,7 +36,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gabrielgamaalves/nocors.git"
+    "url": "git+https://github.com/gabrielgamaalves/nocors.git"
   },
   "homepage": "https://github.com/gabrielgamaalves/nocors#readme",
   "type": "commonjs",

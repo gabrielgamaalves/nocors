@@ -1,6 +1,6 @@
 # Nocors
 
-[![npm version](https://img.shields.io/npm/v/nocors?style=flat-square)](https://www.npmjs.com/package/nocors) [![Open Source](https://img.shields.io/badge/Open%20Source-MIT-brightgreen?style=flat-square)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/nocors?style=flat-square)](https://www.npmjs.com/package/@gabrielgamaalves/nocors) [![Open Source](https://img.shields.io/badge/Open%20Source-MIT-brightgreen?style=flat-square)](https://opensource.org/licenses/MIT)
 
 **Nocors** é uma biblioteca Node.js para requisições HTTP avançadas, oferecendo controle granular de cabeçalhos e perfis de identidade de cliente. Projetada para facilitar integrações robustas, monitoramento confiável e testes de compatibilidade em diferentes cenários de rede e dispositivos.
 
