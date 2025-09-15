@@ -51,7 +51,7 @@ const options = {
   device: ['desktop', 'desktop', 'mobile'] /* 2/3 de chance de ser um user-agent desktop */
 };
 
-const response = await nocors.fetch('https://api.exemplo.com/endpoint', options);
+const response = await nocors('https://api.exemplo.com/endpoint', options);
 const resultado = await response.text();
 ```
 
