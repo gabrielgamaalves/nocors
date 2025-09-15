@@ -18,8 +18,7 @@
     "build": "tsc && npx ts-node ./.dev/index.ts plugin all",
     "start": "node dist/index.js",
     "dev": "tsc --watch",
-    "dev:run": "ts-node ./src/index.ts",
-    "prepublishOnly": "npm run build"
+    "dev:run": "ts-node ./src/index.ts"
   },
   "keywords": [
     "nocors",
