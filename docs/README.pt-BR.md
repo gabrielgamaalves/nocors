@@ -1,12 +1,12 @@
 # Nocors
 
-[![npm version](https://img.shields.io/npm/v/@gabrielgamaalves/nocors?style=flat-square)](https://www.npmjs.com/package/@gabrielgamaalves/nocors) [![Open Source](https://img.shields.io/badge/Open%20Source-MIT-brightgreen?style=flat-square)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@gabrielgamaalves/nocors)](https://www.npmjs.com/package/@gabrielgamaalves/nocors) [![Open Source](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 **Nocors** é uma biblioteca Node.js para requisições HTTP avançadas, oferecendo controle granular de cabeçalhos e perfis de identidade de cliente. Projetada para facilitar integrações robustas, monitoramento confiável e testes de compatibilidade em diferentes cenários de rede e dispositivos.
 
 ## 🌐 Opções de língua
 
-* [English (en-US)](README.en-US.md)
+* [English (en-US)](../README.en-US.md)
 * [Português (pt-BR)](README.pt-BR.md)
 
 ## ✨ Características Principais
@@ -19,11 +19,10 @@
 
 ## 📦 Instalação
 
-⚠️ **Atenção**: Ainda não disponível no NPM. Para usar, clone o repositório:
+Instale diretamente do npm:
 
 ```bash
-git clone https://github.com/gabrielgamaalves/nocors.git
-cd nocors
+npm install @gabrielgamaalves/nocors
 ```
 
 ## 🚀 Início Rápido

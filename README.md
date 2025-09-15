@@ -1,13 +1,13 @@
 # Nocors
 
-[![npm version](https://img.shields.io/npm/v/@gabrielgamaalves/nocors?style=flat-square)](https://www.npmjs.com/package/@gabrielgamaalves/nocors) [![Open Source](https://img.shields.io/badge/Open%20Source-MIT-brightgreen?style=flat-square)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@gabrielgamaalves/nocors)](https://www.npmjs.com/package/@gabrielgamaalves/nocors) [![Open Source](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 **Nocors** is a Node.js library for advanced HTTP requests, providing fine-grained header control and client identity profiles. Designed to support robust integrations, reliable monitoring, and compatibility testing across diverse network and device scenarios.
 
 ## 🌐 Language Options
 
 * [English (en-US)](README.en-US.md)
-* [Português (pt-BR)](README.pt-BR.md)
+* [Português (pt-BR)](docs/README.pt-BR.md)
 
 ## ✨ Key Features
 
@@ -19,11 +19,10 @@
 
 ## 📦 Installation
 
-⚠️ **Note**: Not yet published on NPM. To use, clone the repository:
+Install directly from npm:
 
 ```bash
-git clone https://github.com/gabrielgamaalves/nocors.git
-cd nocors
+npm install @gabrielgamaalves/nocors
 ```
 
 ## 🚀 Quick Start
