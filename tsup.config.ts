@@ -1,17 +1,23 @@
 import { defineConfig } from "tsup"
+const env =
+  process.env.NODE_ENV;
 
 export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['cjs', 'esm'],       // gera CommonJS e ESM
-  dts: true,                     // gera .d.ts
-  sourcemap: true,               // opcional, pode deixar true para debugging
-  clean: true,
-  minify: false,                  // ativa minificação do JS
+  splitting: true,
+  clean: true, // clean up the dist folder
+  dts: true, // generate dts files
+  format: ['cjs', 'esm'],
+  // minify: env === 'production',
+  bundle: env === 'production',
   skipNodeModulesBundle: true,
-  outDir: 'dist',
+  entryPoints: ['src/index.ts'],
+  watch: env === 'development',
+  target: 'es2020',
+  outDir: 'lib',
+  entry: ['src/**/*.ts'], //include all files under src
   terserOptions: {
     format: {
-      comments: /\/\*\*[\s\S]*?\*\//g, // remove apenas JSDoc (@param, @returns, etc)
+      comments: /\/\*\*[\s\S]*?\*\//g,
     }
   }
 });

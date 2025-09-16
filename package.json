@@ -2,24 +2,30 @@
   "name": "@gabrielgamaalves/nocors",
   "version": "1.1.1",
   "description": "Advanced HTTP client for Node.js with header control, retries, and client identity profiles.",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "types": "lib/index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "files": [
-    "dist",
+    "lib",
     "data",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && npx ts-node ./.dev/index.ts plugin all",
-    "start": "node dist/index.js",
-    "dev": "tsc --watch",
-    "dev:run": "ts-node ./src/index.ts"
+    "build": "npx tsup",
+    "start": "node lib/index.js",
+    "dev:test": "node __tests__/index.cjs"
   },
   "keywords": [
     "nocors",
@@ -40,7 +46,7 @@
     "url": "git+https://github.com/gabrielgamaalves/nocors.git"
   },
   "homepage": "https://github.com/gabrielgamaalves/nocors#readme",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^24.3.3",
     "tsup": "^8.5.0",

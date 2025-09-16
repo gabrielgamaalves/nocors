@@ -1,6 +1,5 @@
-// data/user-agents.json
-var user_agents_default = {
-  desktop: [
+export const USER_AGENTS = {
+  "desktop": [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0",
@@ -72,7 +71,7 @@ var user_agents_default = {
     "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/120.0",
     "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/121.0"
   ],
-  mobile: [
+  "mobile": [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
@@ -144,57 +143,34 @@ var user_agents_default = {
     "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/608.3.9 (KHTML, like Gecko) Version/18.0 Mobile/16A5289q Safari/608.3.9",
     "Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.14900"
   ]
-};
+}
 
-// src/lib/core/UsersAgent.ts
-function random(length, timestamp = Date.now()) {
+export function random(length: number, timestamp: number = Date.now()) {
   const seed = timestamp * length;
-  const hash = (num) => {
-    num = (num >> 16 ^ num) * 73244475;
-    num = (num >> 16 ^ num) * 73244475;
-    num = num >> 16 ^ num;
+  const hash = (num: number) => {
+    num = ((num >> 16) ^ num) * 0x45d9f3b;
+    num = ((num >> 16) ^ num) * 0x45d9f3b;
+    num = (num >> 16) ^ num;
+
     return Math.abs(num);
   };
-  return hash(seed) % length;
+
+  return (hash(seed) % length);
 }
-function UserAgent(options) {
-  const validDevices = options?.device?.filter(
-    (d) => d === "desktop" || d === "mobile"
+
+export interface IUserAgentOptions {
+  device?: Array<"mobile" | "desktop">
+}
+
+function UserAgent(options: IUserAgentOptions) {
+  const validDevices = options?.device?.filter((d): d is "mobile" | "desktop" =>
+    d === "desktop" || d === "mobile"
   ) || ["desktop"];
-  const device = user_agents_default[validDevices[random(validDevices.length)]];
-  const ua = device[random(device.length)];
-  return ua;
-}
-var UsersAgent_default = UserAgent;
 
-// src/lib/index.ts
-async function nocors(uri, init = {}) {
-  const url = new URL(uri);
-  const headers = new Headers({
-    "User-Agent": UsersAgent_default({ device: init?.device }),
-    "Host": url.host,
-    "Origin": url.origin,
-    "Referer": url.origin + "/",
-    "Connection": "keep-alive"
-  });
-  if (init?.headers) {
-    Object.entries(init.headers).forEach(([key, value]) => {
-      headers.set(key, value);
-    });
-    delete init.headers;
-  }
-  const $f = await fetch(url, {
-    headers,
-    referrer: url.origin,
-    ...init
-  });
-  return $f;
-}
-var lib_default = nocors;
+  const device = USER_AGENTS[validDevices[random(validDevices.length)]]
+  const ua = device[random(device.length)]
 
-// src/index.ts
-var index_default = lib_default;
-export {
-  index_default as default
-};
-//# sourceMappingURL=index.mjs.map
+  return ua
+}
+
+export default UserAgent
