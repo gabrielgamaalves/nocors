@@ -3,11 +3,11 @@ const env =
   process.env.NODE_ENV;
 
 export default defineConfig({
-  splitting: true,
+  // splitting: true,
   clean: true, // clean up the dist folder
   dts: true, // generate dts files
-  format: ['cjs', 'esm'],
-  // minify: env === 'production',
+  format: ['cjs'],
+  minify: env === 'production',
   bundle: env === 'production',
   skipNodeModulesBundle: true,
   entryPoints: ['src/index.ts'],
