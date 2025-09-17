@@ -30,16 +30,16 @@ npm install @gabrielgamaalves/nocors
 ### Basic Example
 
 ```javascript
-const nocors = require('./nocors');
+const nocors = require('@gabrielgamaalves/nocors');
 
-const response = await nocors('https://api.example.com/data');
+const response = await nocors.fetch('https://api.example.com/data');
 const data = await response.json();
 ```
 
 ### Example with Custom Options
 
 ```javascript
-const nocors = require('./nocors');
+const nocors = require('@gabrielgamaalves/nocors');
 
 const options = {
   method: 'POST',
@@ -51,7 +51,7 @@ const options = {
   device: ['desktop', 'desktop', 'mobile'] // 2/3 chance of being a desktop user-agent
 };
 
-const response = await nocors('https://api.example.com/endpoint', options);
+const response = await nocors.fetch('https://api.example.com/endpoint', options);
 const result = await response.text();
 ```
 
