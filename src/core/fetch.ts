@@ -1,4 +1,5 @@
 import { UserAgent } from "./useragent";
+import { HeadersNoCors } from "./headers";
 
 interface NocorsRequestInit extends RequestInit {
   device?: Array<"mobile" | "desktop">;
@@ -29,23 +30,17 @@ interface IFetchNocors {
 export const fetch: IFetchNocors = async (uri, init = {}) => {
   const url = new URL(uri);
 
-  const headers = new Headers({
+  const headers = HeadersNoCors(init?.headers, {
     "User-Agent": UserAgent({ device: init?.device }),
     "Host": url.host,
     "Origin": url.origin,
-    "Referer": url.origin + "/",
+    "Referer": `${url.origin}/`,
     "Connection": "keep-alive"
   });
 
-  if (init?.headers) {
-    Object.entries(init.headers).forEach(([key, value]) => {
-      headers.set(key, value);
-    });
+  delete init.headers;
 
-    delete init.headers;
-  }
-
-  const $f = await fetch(url, {
+  const $f = await globalThis.fetch(url, {
     headers,
     referrer: url.origin,
     ...init
