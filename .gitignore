@@ -1,6 +1,6 @@
 node_modules
+lib
+
 __tests__
 
 .github
-
-data/user-agents.json.ts

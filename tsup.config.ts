@@ -3,21 +3,15 @@ const env =
   process.env.NODE_ENV;
 
 export default defineConfig({
-  // splitting: true,
-  clean: true, // clean up the dist folder
-  dts: true, // generate dts files
-  format: ['cjs'],
+  entry: ['src/index.ts'],
+  format: ['cjs', 'esm'],
   minify: env === 'production',
   bundle: env === 'production',
   skipNodeModulesBundle: true,
-  entryPoints: ['src/index.ts'],
-  watch: env === 'development',
-  target: 'es2020',
-  outDir: 'lib',
-  entry: ['src/**/*.ts'], //include all files under src
-  terserOptions: {
-    format: {
-      comments: /\/\*\*[\s\S]*?\*\//g,
-    }
-  }
-});
+  dts: true,
+  splitting: false,
+  sourcemap: true,
+  clean: true,
+  // target: 'es2022',
+  outDir: "./lib"
+})
